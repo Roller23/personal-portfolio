@@ -2,11 +2,7 @@ self.addEventListener('install', function(e) {
     e.waitUntil(
         caches.open('victor').then(function(cache) {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/styles/main.css',
-                '/scripts/vue.production.js',
-                '/scripts/main.js'
+                '/scripts/vue.production.js'
             ]);
         })
     );
