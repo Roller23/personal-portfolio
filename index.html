@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href='styles/main.css'>
+    <meta charset="UTF-8">
+    <meta name="description" content="A web developer's portfolio site.">
+    <meta name="author" content="Wiktor Kania">
+    <meta name="theme-color" content="#0e8bcf">
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wiktor Kania - Web Developer</title>
+</head>
+<body>
+    <div class="container">
+        <div class="position">
+            <div class="box-holder">
+                <div v-for='box in boxes' :class="['box', {'selected': box.selected}]" @click='changeSection(box.name, $event)'></div>
+            </div>
+        </div>
+        <header>
+            <div class="logo">
+                <div class="left"><</div>
+                <div class="middle">VK</div>
+                <div class="right">></div>
+            </div>
+            <!-- <a class="email" href="mailto:victorkaniaweb@gmail.com">victorkaniaweb@gmail.com</a> -->
+            <div class="sections">
+                <div v-for='section in sections' :class="['section', {'selected': section.selected}]" v-text='section.name' @click='changeSection' :name='section.name'></div>
+            </div>
+        </header>
+        <div class="home-page page">
+            <div class="main-text">
+                    I'm a full-stack developer.
+                    <div class="smaller">
+                        Working on the web is both my job and my hobby, scroll down to learn more about me and my work.
+                    </div>
+            </div>
+            <button type="button" class="main-btn" @click='progress'>See more</button>
+        </div>
+        <div class="page about-page">
+            <div class="background"></div>
+            <div class="overlay">
+                <img alt="separator" src="images/sep.png" class="sep" style="bottom: -1px;">
+                <img alt="separator" src="images/sep.png" class="sep" style="top: -1px; transform: scale(-1, -1);">
+            </div>
+            <div class="contents">
+                <h1 class="heading">A bit about me</h1>
+                <div class="flex-wrapper">
+                    <div class="content">
+                        <p>I've worked with an agency as a part of a team as well as individual clients. I love problem solving and working on fascinating projects.</p>
+                        <p>The web is rapidly changing and I'm constantly learning. I can work with Javascript, Vue, jQuery, CSS3, SASS on front-end, and PHP, Node.js, databases (such as MySQL, MongoDB) on back-end. I never limit myself and try to tackle a new technology if the task requires it.</p>
+                        <p>Programming, solving problems, and creating things are my hobby. I've done a number of projects outside of work ranging from prototyping simple ideas to building sites that would later spawn big communities.</p>
+                    </div>
+                    <div class="tech">
+                        <div class="circle s100" style="transform: translate(-100%, -100%);background-image: url(images/vue.png);background-size: 50px;background-color: lightgreen;"></div>
+                        <div class="circle s100" style="transform: translate(100%, -120%);background-image: url(images/sass.png);"></div>
+                        <div class="circle s150" style="transform: translate(-50%, 0%);background-image: url(images/node.png);background-size: 100px;"></div>
+                        <div class="circle s150" style="transform: translate(80%, 20%);background-image: url(images/css.png);background-size: 70px;background-color: lightblue;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page projects-page">
+            <div class="contents">
+                <h1 class="heading" style="text-align: center;">Some of my projects</h1>
+                <div class="content">
+                    <div class="projects">
+                        <a class="project-wrap" style="background-image: url(projects/artecrew.jpg)" target="_blank" href="http://artecrewstudio.com/" rel="noreferrer">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <div class="website">http://artecrewstudio.com/</div>
+                                <div class="name">
+                                    Arte Crew Studio
+                                    <div class="line"></div>
+                                </div>
+                                <div class="visit">Click to visit</div>
+                            </div>
+                        </a>
+                        <a class="project-wrap" style="background-image: url(projects/rachunkowe.jpg);background-position: 0px;" target="_blank" href="http://larachunkowe.pl/" rel="noreferrer">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <div class="website">http://larachunkowe.pl/</div>
+                                <div class="name">
+                                    L&A Office
+                                    <div class="line"></div>
+                                </div>
+                                <div class="visit">Click to visit</div>
+                            </div>
+                        </a>
+                        <a class="project-wrap" style="background-image: url(projects/phansite.jpg)" target="_blank" href="https://phansite.net/" rel="noreferrer">
+                            <div class="overlay"></div>
+                            <div class="info">
+                                <div class="website">https://phansite.net/</div>
+                                <div class="name">
+                                    Phansite
+                                    <div class="line"></div>
+                                </div>
+                                <div class="visit">Click to visit</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page contact-page">
+            <div class="email-background">
+                <img alt="separator" src="images/sep.png" class="sep" style="top: -1px;transform: scale(-1, -1);">
+                <img alt="separator" src="images/sep2.png" class="sep" style="bottom: -1px;">
+            </div>
+            <div class="contents">
+                <h1 class="heading">Get in touch</h1>
+                <div class="content">
+                    <p>Have a question? Want to talk about your ideas? Send me an email.</p>
+                    <p>
+                        <a href="mailto:victorkaniaweb@gmail.com">
+                            <button type="button" class="email-btn">Send an email</button>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:victorkaniaweb@gmail.com" style="color: white;">victorkaniaweb@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="holder">
+                <div class="logo bottom" style="top: 50%;">
+                    <div class="left"><</div>
+                    <div class="middle">/VK</div>
+                    <div class="right">></div>
+                </div>
+                <div class="info-wrap">
+                    Copyright Wiktor Kania <span class="copyright-year">2020</span> ©
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="scripts/vue.production.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
