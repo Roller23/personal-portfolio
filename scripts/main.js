@@ -135,6 +135,5 @@
     }
 
     get('.copyright-year').innerText = (new Date()).getFullYear();
-    console.log('hello')
 
 })();
