@@ -5,8 +5,8 @@ self.addEventListener('install', function(e) {
                 '/scripts/vue.production.js',
                 '/fonts/Lato-Black.ttf',
                 '/fonts/Lato-Bold.ttf',
-                '/fonts/Lato-Black.ttf',
-                '/fonts/Lato-Light.ttf'
+                '/fonts/Lato-Light.ttf',
+                '/fonts/Fredoka.ttf'
             ]);
         })
     );
