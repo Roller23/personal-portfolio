@@ -3,7 +3,10 @@ self.addEventListener('install', function(e) {
         caches.open('victor').then(function(cache) {
             return cache.addAll([
                 '/scripts/vue.production.js',
-                '/styles/main.css'
+                '/fonts/Lato-Black.ttf',
+                '/fonts/Lato-Bold.ttf',
+                '/fonts/Lato-Black.ttf',
+                '/fonts/Lato-Light.ttf'
             ]);
         })
     );
