@@ -341,6 +341,13 @@ footer {
     @media (min-width: 1800px) {
         max-width: 70%;
     }
+    p:not(:first-child) {
+        margin: 5px 0px;
+        a {
+            color: white;
+            font-size: 14px;
+        }
+    }
 }
 
 .projects {

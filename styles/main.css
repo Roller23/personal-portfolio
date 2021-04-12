@@ -407,6 +407,13 @@ footer .info-wrap {
     max-width: 70%;
   }
 }
+.see-also p:not(:first-child) {
+  margin: 5px 0px;
+}
+.see-also p:not(:first-child) a {
+  color: white;
+  font-size: 14px;
+}
 
 .projects {
   margin: auto;
