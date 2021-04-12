@@ -10,19 +10,19 @@
 
     function scrollToEl(element, duration) {
         duration = duration || 1000;
-        var startingY = window.pageYOffset;
-        var elementY = window.pageYOffset + element.getBoundingClientRect().top;
-        var targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY;
-        var diff = targetY - startingY;
-        var start;
-        var easing = function(t) {
+        let startingY = window.pageYOffset;
+        let elementY = window.pageYOffset + element.getBoundingClientRect().top;
+        let targetY = document.body.scrollHeight - elementY < window.innerHeight ? document.body.scrollHeight - window.innerHeight : elementY;
+        let diff = targetY - startingY;
+        let start;
+        let easing = function(t) {
             return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
         }
         if (!diff) return;
         window.requestAnimationFrame(function step(timestamp) {
             if (!start) start = timestamp;
-            var time = timestamp - start;
-            var percent = Math.min(time / duration, 1);
+            let time = timestamp - start;
+            let percent = Math.min(time / duration, 1);
             percent = easing(percent);
             window.scrollTo(0, startingY + diff * percent);
             if (time < duration) {
@@ -36,7 +36,7 @@
     }
 
     function selectSection(name) {
-        var dest;
+        let dest;
         header.sections.forEach(function(section, index) {
             section.selected = section.name === name;
             if (section.selected) {
@@ -50,23 +50,23 @@
     }
 
     function debounce(func, wait, immediate) {
-        var timeout;
+        let timeout;
         return function() {
-            var context = this, args = arguments;
-            var later = function() {
+            let context = this, args = arguments;
+            let later = function() {
                 timeout = null;
                 if (!immediate) func.apply(context, args);
             };
-            var callNow = immediate && !timeout;
+            let callNow = immediate && !timeout;
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
             if (callNow) func.apply(context, args);
         };
     };
 
-    var scrollCallback = debounce(function(e) {
-        var offset = window.scrollY;
-        var height = get('.page').scrollHeight;
+    let scrollCallback = debounce(function(e) {
+        let offset = window.scrollY;
+        let height = get('.page').scrollHeight;
         header.sections.forEach(function(section, index) {
             if (offset > (height * index) - (height / 2)) {
                 selectSection(section.name);
@@ -77,7 +77,7 @@
     document.addEventListener('scroll', scrollCallback);
     scrollCallback();
 
-    var header = new Vue({
+    let header = new Vue({
         el: 'header',
         data: {
             sections: [
@@ -89,13 +89,13 @@
         },
         methods: {
             changeSection: function(evt) {
-                var dest = toArray(getAll('header .section')).indexOf(evt.target);
+                let dest = toArray(getAll('header .section')).indexOf(evt.target);
                 scrollToEl(getAll('.page')[dest]);
             }
         }
     });
 
-    var position = new Vue({
+    let position = new Vue({
         el: '.position',
         data: {
             boxes: header.sections
@@ -107,7 +107,7 @@
         }
     })
 
-    var mainBtn = new Vue({
+    let mainBtn = new Vue({
         el: '.main-btn',
         data: {
 
@@ -119,15 +119,15 @@
         }
     });
 
-    var supports = {
+    let supports = {
         serviceWorkers: 'serviceWorker' in navigator,
         pushManager: 'PushManager' in window,
         notifications: 'Notification' in window
     }
-    var workerRegistration = null;
+    let workerRegistration = null;
 
     if (supports.serviceWorkers) {
-        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        navigator.serviceWorker.register('service-worker.js').then(function(registration) {
             workerRegistration = registration;
         }).catch(function(err) {
             console.error('Unable to register service worker.', err);

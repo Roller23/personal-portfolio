@@ -400,6 +400,7 @@ footer .info-wrap {
 .see-also {
   max-width: 1200px;
   width: 100%;
+  margin: auto;
 }
 @media (min-width: 1800px) {
   .see-also {
