@@ -424,7 +424,7 @@ footer .info-wrap {
   display: flex;
   max-width: 1200px;
   width: 100%;
-  height: calc(100vh - 500px);
+  height: calc(100vh - 400px);
   flex-flow: row;
 }
 @media (min-width: 1800px) {
