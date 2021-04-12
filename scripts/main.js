@@ -125,8 +125,9 @@
         notifications: 'Notification' in window
     }
     let workerRegistration = null;
+    const loadServiceWorker = false;
 
-    if (supports.serviceWorkers) {
+    if (supports.serviceWorkers && loadServiceWorker) {
         navigator.serviceWorker.register('service-worker.js').then(function(registration) {
             workerRegistration = registration;
         }).catch(function(err) {
