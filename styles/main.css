@@ -397,6 +397,16 @@ footer .info-wrap {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.7);
 }
 
+.see-also {
+  max-width: 1200px;
+  width: 100%;
+}
+@media (min-width: 1800px) {
+  .see-also {
+    max-width: 70%;
+  }
+}
+
 .projects {
   margin: auto;
   margin-top: 40px;

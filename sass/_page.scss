@@ -334,6 +334,14 @@ footer {
     }
 }
 
+.see-also {
+    max-width: 1200px;
+    width: 100%;
+    @media (min-width: 1800px) {
+        max-width: 70%;
+    }
+}
+
 .projects {
     margin: auto;
     margin-top: 40px;
