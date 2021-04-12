@@ -341,11 +341,14 @@ footer {
     @media (min-width: 1800px) {
         max-width: 70%;
     }
-    p:not(:first-child) {
-        margin: 5px 0px;
-        a {
-            color: white;
-            font-size: 14px;
+    p {
+        margin-bottom: 0px;
+        &:not(:first-child) {
+            margin: 0px;
+            a {
+                color: white;
+                font-size: 13px;
+            }
         }
     }
 }
@@ -356,7 +359,7 @@ footer {
     display: flex;
     max-width: 1200px;
     width: 100%;
-    height: calc(100vh - 400px);
+    height: calc(100vh - 500px);
     flex-flow: row;
     @media (min-width: 1800px) {
         max-width: 70%;

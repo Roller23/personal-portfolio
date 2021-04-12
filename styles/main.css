@@ -407,12 +407,15 @@ footer .info-wrap {
     max-width: 70%;
   }
 }
+.see-also p {
+  margin-bottom: 0px;
+}
 .see-also p:not(:first-child) {
-  margin: 5px 0px;
+  margin: 0px;
 }
 .see-also p:not(:first-child) a {
   color: white;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .projects {
@@ -421,7 +424,7 @@ footer .info-wrap {
   display: flex;
   max-width: 1200px;
   width: 100%;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 500px);
   flex-flow: row;
 }
 @media (min-width: 1800px) {
